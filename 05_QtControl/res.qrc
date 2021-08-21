@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/add@2x.png</file>
+        <file>image/confirm@2x.png</file>
+        <file>image/delete@2x.png</file>
+        <file>image/more@2x.png</file>
+        <file>image/open@2x.png</file>
+        <file>image/search@2x.png</file>
+        <file>image/setting@2x.png</file>
+    </qresource>
+</RCC>
