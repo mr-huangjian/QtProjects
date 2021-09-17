@@ -15,7 +15,12 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+    // 重写定时器事件
+    void timerEvent(QTimerEvent * ev);
+
+
 private:
     Ui::Widget *ui;
+    int timerId;
 };
 #endif // WIDGET_H

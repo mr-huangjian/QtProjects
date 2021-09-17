@@ -15,6 +15,10 @@ public:
     // 鼠标离开事件
     void leaveEvent(QEvent *event);
 
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+
 
 signals:
 
