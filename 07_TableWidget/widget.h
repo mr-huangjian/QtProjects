@@ -16,6 +16,12 @@ public:
     ~Widget();
 
 private:
+    QStringList strList;
     Ui::Widget *ui;
+    void updateTable();
+
+private slots:
+    void killApp(QString bundleId);
+
 };
 #endif // WIDGET_H
