@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     form.cpp \
-    main.cpp
+    main.cpp \
+    model.cpp
 
 HEADERS += \
-    form.h
+    form.h \
+    model.h
 
 FORMS += \
     form.ui

@@ -26,6 +26,10 @@ private slots:
 
 private:
     Ui::Form *ui;
+    void watchMovie();
+    void watchMovie(QVariant variant);
+    void watchMovie(QString movieName);
+    void watchMovie(QString movieName, QString time, QString place);
 };
 
 #endif // FORM_H

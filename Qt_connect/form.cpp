@@ -1,6 +1,8 @@
 ﻿#include "form.h"
 #include "ui_form.h"
 #include <QDebug>
+#include <QFont>
+#include "model.h"
 
 Form::Form(QWidget *parent) :
     QWidget(parent),
@@ -10,7 +12,32 @@ Form::Form(QWidget *parent) :
 
     setWindowTitle("");
 
+    // 设置字间距
+    QFont font = ui->buyButton->font();
+    font.setLetterSpacing(QFont::AbsoluteSpacing, 5);
+    ui->buyButton->setFont(font);
 
+    // connect / disconnect / lambda
+    // https://juejin.cn/post/7010652538223460388/
+
+    // QVariant
+    // https://zhuanlan.zhihu.com/p/97827443
+    // https://www.pianshen.com/article/7905818190/
+    // https://blog.csdn.net/h1530687053/article/details/114979702
+    // https://blog.csdn.net/zhangbinsijifeng/article/details/50686753
+
+    // QSignalMapper
+    // https://www.cnblogs.com/kongbursi-2292702937/p/15016769.html
+    // http://www.cppblog.com/gaimor/archive/2014/12/14/209183.html
+
+    connect(ui->buyButton, &QPushButton::clicked, this, [=] {
+        Model model;
+        model.name = "购票按钮被点击了";
+
+        // QVariant variant;
+        // variant.setValue(model);
+        watchMovie(QVariant::fromValue(model));
+    });
 }
 
 Form::~Form()
@@ -50,4 +77,9 @@ void Form::on_watchButton_clicked()
 
 void Form::mousePressEvent(QMouseEvent *event) {
     setFocus();
+}
+
+void Form::watchMovie(QVariant variant) {
+    Model model = variant.value<Model>();
+    qDebug() << "variant.value: " << model.name;
 }
