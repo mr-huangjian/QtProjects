@@ -1,4 +1,4 @@
-#include "widget.h"
+﻿#include "widget.h"
 #include "ui_widget.h"
 #include <QTimer>
 #include <QDebug>
@@ -21,15 +21,17 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    timerId = startTimer(1000);
+    /** 两种定时器
+        timerId = startTimer(1000);
 
-    qDebug() << "start at: " << currentTime();
+        qDebug() << "start at: " << currentTime();
 
-    QTimer * timer = new QTimer(this);
-    timer->start(2000);
-    connect(timer, &QTimer::timeout, []{
-        qDebug() << "running at: " << currentTime();
-    });
+        QTimer * timer = new QTimer(this);
+        timer->start(2000);
+        connect(timer, &QTimer::timeout, []{
+            qDebug() << "running at: " << currentTime();
+        });
+    */
 }
 
 Widget::~Widget()

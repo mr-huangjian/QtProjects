@@ -2,6 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QBrush>
+#include <QPen>
+#include <QPainter>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -15,11 +18,8 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
-    // 重写定时器事件
-    void timerEvent(QTimerEvent * ev);
-
 private:
     Ui::Widget *ui;
-    int timerId;
+    void paintEvent(QPaintEvent *event);
 };
 #endif // WIDGET_H

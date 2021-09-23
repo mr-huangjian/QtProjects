@@ -1,4 +1,4 @@
-#ifndef MYLABEL_H
+﻿#ifndef MYLABEL_H
 #define MYLABEL_H
 
 #include <QLabel>
@@ -22,6 +22,9 @@ public:
 
 signals:
 
+private:
+    bool event(QEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event);
 };
 
 #endif // MYLABEL_H
