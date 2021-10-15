@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/bajiao.jpg</file>
+        <file>images/keyboard.png</file>
+    </qresource>
+</RCC>

@@ -18,8 +18,12 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Widget *ui;
+    int posX = 0;
     void paintEvent(QPaintEvent *event);
 };
 #endif // WIDGET_H
